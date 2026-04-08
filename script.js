@@ -1,4 +1,4 @@
-console.log("hello world")
+console.log("hello world");
 
 
 //basic math function
@@ -19,8 +19,8 @@ function divide(a, b){
 
 // variables that store value
 let firstNumber = "";
-let sacondNumber = ""
-let operator = ""
+let secondNumber = "";
+let operator = "";
 
 
 // function for perform operation
@@ -33,25 +33,61 @@ function operate(operator, a, b){
 }
 
 
+//    selection
+const displayNumber = document.querySelector(".h3-number");
+const displayResult = document.querySelector(".h3-result");
+const numberButton = document.querySelectorAll(".btn");
+const operators = document.querySelectorAll(".operator");
+const clear = document.querySelector(".clear");
+const del = document.querySelector(".delete");
+const equal = document.querySelector(".equal")
+
+//logic
+numberButton.forEach(button => {
+    button.addEventListener("click", () => {
+        if(operator === ""){
+            firstNumber += button.value;         
+        } else{
+            secondNumber += button.value;          
+        }
+        displayNumber.textContent =
+    firstNumber +
+    (operator ? " " + operator : "") +
+    (secondNumber ? " " + secondNumber : "");
+    })
+    
+});
 
 
+//operator logic
+operators.forEach(btn => {
+    btn.addEventListener("click", () =>{
+        if(firstNumber === "") return;
 
+        //logic for chain 
+        if( operator !== "" && secondNumber !== ""){
+             let result = operate(operator, Number(firstNumber), Number(secondNumber));
+             
+            firstNumber = result.toString()
+            secondNumber = "";
+            displayNumber.textContent = result
+        }
 
+        operator = btn.textContent;
+        displayNumber.textContent = firstNumber+ " "+operator;
+    });
+    
+});
 
+//equal buton logic
+equal.addEventListener("click", () => {
+    if(firstNumber === "" || operator === "" || secondNumber === "") return;
+    let result = operate(operator, Number(firstNumber), Number(secondNumber));
+    displayResult.textContent = result;
 
+    firstNumber = result.toString();
+    operator = "";
+    secondNumber = "";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    displayNumber.textContent = firstNumber;
+})
