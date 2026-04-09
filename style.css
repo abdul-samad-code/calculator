@@ -62,7 +62,7 @@ button:hover {
 
 .equal{
     background: green;
-    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .clear{
@@ -72,8 +72,9 @@ button:hover {
 .delete{
     background: #ff8800;
 }
-button[value="0"]{
-    grid-column: span 2;
+
+.zero {
+  grid-column: span 2;
 }
 
 button:active{

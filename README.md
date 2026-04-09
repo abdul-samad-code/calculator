@@ -1,5 +1,13 @@
 # 🧮 Calculator Web App
 
+## 📸 Preview
+
+<p align="center">
+  <img src="calculator-scr.jpg" width="300"/>
+</p>
+
+---
+
 A simple and interactive calculator built using **HTML, CSS, and JavaScript**.  
 This project performs basic arithmetic operations and provides a clean UI similar to a real calculator.
 
@@ -25,15 +33,7 @@ This project performs basic arithmetic operations and provides a clean UI simila
 - CSS3 (Grid Layout)  
 - JavaScript (DOM Manipulation & Logic)  
 
----
 
-## 📸 Preview
-
-<p align="center">
-  <img src="calc-screen.jpg" width="300"/>
-</p>
-
----
 
 
 
